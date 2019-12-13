@@ -2,6 +2,7 @@ var start = ['', 0], end = ['', 0],   // query title followed by pageID of title
     autocompleteScript = '', idScript = '';
 
 function autocomplete(data) {
+  // console.log(data);
   var box = document.activeElement;
   var val = box.value;
   closeAll();
@@ -10,9 +11,10 @@ function autocomplete(data) {
       var b = document.createElement("div");
       b.innerHTML = "<strong>" + data[1][i].substr(0, val.length) + "</strong>";
       b.innerHTML += data[1][i].substr(val.length);
-      b.innerHTML += "<input type='hidden' value='" + data[1][i] + "'>";
-      b.innerHTML += "<span style='display: none'>" + data[3][i] + "</span>";
+      b.innerHTML += `<input type="hidden" value="` + data[1][i] + `">`;
+      b.innerHTML += `<span style="display: none">` + data[3][i] + `</span>`;
       b.addEventListener("click", function(e) {
+        console.log(this.getElementsByTagName("input")[0]);
         box.value = this.getElementsByTagName("input")[0].value;
         closeAll();
         getPageID(box.value, box.id.replace("Box", ""));
