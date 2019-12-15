@@ -26,9 +26,9 @@ function autocomplete(data) {
 
 function getPageID(title, which) {
   if (idScript !== '') document.body.removeChild(idScript) ;
-  idScript = document.createElement('script');  // the script that will hold the data we're trying to get
+  idScript = document.createElement('script');  // script that will hold the data we're trying to get
   idScript.src = `https://en.wikipedia.org/w/api.php?action=query&format=json&callback=${which}ID&titles=${title}`;
-  document.body.appendChild(idScript);  // this attaches the script to the body of the page
+  document.body.appendChild(idScript);  // attaches the script to the body of the page
 }
 
 function setID(data, id) {
