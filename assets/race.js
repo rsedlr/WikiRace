@@ -2,7 +2,6 @@ var start = ['', 0], end = ['', 0],   // query title followed by pageID of title
     autocompleteScript = '', idScript = '';
 
 function autocomplete(data) {
-  // console.log(data);
   var box = document.activeElement;
   var val = box.value;
   closeAll();
